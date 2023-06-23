@@ -4,8 +4,6 @@ Thank you for considering contributing to the Textual Clustering Analysis projec
 
 ## How to Contribute
 
----
-
 1. Fork the repository and clone it locally.
 
 2. Create a new branch from the `main` branch to work on your changes.
@@ -28,8 +26,6 @@ Thank you for considering contributing to the Textual Clustering Analysis projec
 
 ## Guidelines
 
----
-
 - Follow the established coding style and conventions used in the project.
 - Ensure that your changes do not introduce new warnings or errors when building or running the project.
 - Keep your changes focused and limited to the purpose of the PR. If you have multiple unrelated changes, consider submitting separate PRs.
@@ -40,17 +36,11 @@ Thank you for considering contributing to the Textual Clustering Analysis projec
 
 ## Code of Conduct
 
----
-
 Please note that by contributing to this project, you are expected to adhere to the [Code of Conduct](CODE_OF_CONDUCT.md). Ensure that all interactions and contributions align with the principles outlined in the code of conduct.
 
 ## License
 
----
-
 By contributing to this project, you agree that your contributions will be licensed under the [project's licence](LICENSE.md).
-
----
 
 We appreciate your contributions and look forward to your involvement in making the Textual Clustering Analysis project even better! If you have any questions or need assistance, feel free to reach out to the project maintainers.
 

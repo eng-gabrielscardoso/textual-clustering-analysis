@@ -2,8 +2,6 @@
 
 ## Reporting a Vulnerability
 
----
-
 We take the security of the Textual Clustering Analysis project seriously. If you discover any security vulnerabilities, please report them to us as soon as possible. Your help in disclosing potential vulnerabilities is greatly appreciated, and it allows us to address them promptly and ensure the security of our users.
 
 To report a vulnerability, please follow these steps:
@@ -24,13 +22,9 @@ To report a vulnerability, please follow these steps:
 
 ## Scope
 
----
-
 This security policy applies to the Textual Clustering Analysis project. It encompasses the project's source code, documentation, and official releases. Third-party libraries or dependencies used by the project are subject to their own security policies and should be reported to their respective maintainers.
 
 ## Expectations
-
----
 
 - Report vulnerabilities in a responsible and coordinated manner, allowing us adequate time to address the issue before any public disclosure.
 
@@ -40,11 +34,7 @@ This security policy applies to the Textual Clustering Analysis project. It enco
 
 ## Reward
 
----
-
 We are grateful for your efforts in helping us maintain a secure project. While we do not currently offer a formal bug bounty program, we may, at our discretion, provide acknowledgments and give credit to individuals who report valid security vulnerabilities.
-
----
 
 We value the security and privacy of our users, and we appreciate your assistance in making the Textual Clustering Analysis project more secure. If you have any questions or concerns regarding this security policy or need further assistance, please contact our security team at [eng.gabrielscardoso@gmail.com](mailto:eng.gabrielscardoso@gmail.com).
 

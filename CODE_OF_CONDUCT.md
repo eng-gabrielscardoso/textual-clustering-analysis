@@ -2,13 +2,9 @@
 
 ## Introduction:
 
----
-
 As contributors and maintainers of the project, we are committed to creating a friendly and inclusive environment for everyone involved. This code of conduct outlines our expectations for all participants, including developers, contributors, maintainers, and users. By participating in this project, you agree to abide by this code of conduct.
 
 ## Expected Behaviour:
-
----
 
 1. Be respectful and considerate towards others. Treat all participants with kindness, professionalism, and empathy.
 2. Foster a collaborative and inclusive atmosphere. Encourage diverse opinions, perspectives, and experiences.
@@ -18,8 +14,6 @@ As contributors and maintainers of the project, we are committed to creating a f
 6. Focus on the technical aspects of the project and avoid personal attacks, insults, or derogatory language.
 
 ## Unacceptable Behaviour:
-
----
 
 The following behaviors are considered unacceptable and will not be tolerated within the project:
 
@@ -31,14 +25,10 @@ The following behaviors are considered unacceptable and will not be tolerated wi
 
 ## Reporting and Enforcement:
 
----
-
 1. If you witness or experience any violations of this code of conduct, promptly report them to the project maintainers.
 2. All reports will be treated with the utmost confidentiality and will be thoroughly investigated.
 3. The project maintainers reserve the right to take appropriate action, including but not limited to warnings, temporary bans, or permanent removal from the project, based on the severity and frequency of the violation.
 
 ## Acknowledgment:
-
----
 
 By participating in the Textual Clustering Analysis project, you acknowledge that you have read and understood this code of conduct. You also agree to uphold the principles outlined herein and to maintain a positive and inclusive environment for everyone involved in the project.

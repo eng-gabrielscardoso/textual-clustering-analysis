@@ -6,8 +6,6 @@ This works aims to provide the solutions for the problems encountered in the Sec
 
 ## Technologies
 
----
-
 In this project we use the following technologies:
 
 - [Python3](https://www.python.org/)
@@ -15,8 +13,6 @@ In this project we use the following technologies:
 - Git and Github
 
 ## Installation
-
----
 
 ### With installed SDK
 
@@ -34,12 +30,8 @@ After it, run the command `source` in your `.bashrc` to reload the configuration
 
 ## Authors
 
----
-
 To see the list of authors, please go to [authors file](AUTHORS.md).
 
 ## Licence
-
----
 
 This project is licenced under the MIT Licence. see [here](LICENSE.md).
