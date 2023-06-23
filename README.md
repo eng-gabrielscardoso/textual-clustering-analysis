@@ -18,7 +18,7 @@ In this project we use the following technologies:
 
 If you have the installed SDK in your system just make sure that you have the same versions required for the project and setup in your IDE of preference (we recommend [Visual Studio Code](https://code.visualstudio.com/)).
 
-### Packages
+## Packages
 
 If you want to contribute with project we recommend install the dependencies inside [`requirements.txt`](requirements.txt). To use this packages you will need to update your `PATH` configuration. On Linux you should update your `.bashrc` including the following:
 
@@ -27,6 +27,58 @@ export PATH="$PATH:/home/${USER}/.local/bin"
 ```
 
 After it, run the command `source` in your `.bashrc` to reload the configuration and then you will be able to use the packages binaries.
+
+## Useful commands
+
+### Running application
+
+- Run application:
+
+```bash
+python3 src/main.py
+```
+
+### Lint
+
+- Lint project with PEP8 specifications:
+
+```bash
+# -a: aggressively
+# -i: make changes in file in-place
+# -r: recursively
+autopep8 -a -i -r .
+```
+
+### Test
+
+- Run all tests:
+
+```bash
+pytest
+# or
+pytest .
+```
+
+- Run specific test:
+
+```bash
+# you must specify the path to the test
+pytest tests/example_test.py
+```
+
+### Coverage
+
+- Run tests with coverage:
+
+```bash
+coverage run -m pytest .
+```
+
+- Generate coverage report:
+
+```bash
+coverage report
+```
 
 ## Authors
 

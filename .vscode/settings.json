@@ -1,4 +1,8 @@
 {
     "editor.tabSize": 4,
-    "cSpell.words": ["UFPA"]
+    "cSpell.words": [
+        "autopep",
+        "pytest",
+        "UFPA"
+    ]
 }
