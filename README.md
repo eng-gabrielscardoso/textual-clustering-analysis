@@ -10,6 +10,9 @@ In this project we use the following technologies:
 
 - [Python3](https://www.python.org/)
 - [PIP](https://pypi.org/project/pip/)
+- [Autopep8](https://pypi.org/project/autopep8/)
+- [Coverage](https://pypi.org/project/coverage/)
+- [Pytest](https://pypi.org/project/pytest/)
 - Git and Github
 
 ## Installation
