@@ -3,7 +3,7 @@ from app.app import App
 
 def main():
     try:
-        app = App()
+        App()
     except Exception as e:
         print(f'Failed to load app: {e}')
 

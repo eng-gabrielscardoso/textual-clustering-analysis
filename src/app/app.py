@@ -5,6 +5,7 @@ import sys
 
 class App:
     INI_FILE = "app.ini"
+    ALLOWED_EXTENSIONS = (".txt")
 
     def __load_ini_file(self, filename):
         full_path = os.path.abspath(os.path.join("./", filename))
@@ -18,18 +19,16 @@ class App:
             print(f"Couldn't load file in {path_config_file}")
             return False
 
-    def __load_file(self, filePaths):
+    def __load_files(self):
         try:
             self.files = []
-            for file in filePaths:
-                full_path = os.path.abspath(
-                    os.path.join("./src/assets/texts", file))
-                path_words_file = full_path if os.path.isfile(full_path) else \
-                    os.path.abspath(os.path.join(
-                        os.path.dirname(sys.executable), file))
-                with open(path_words_file, 'r', encoding='utf-8') as file:
-                    content = file.read()
-                    self.files.append(content)
+            full_path = os.path.abspath("./src/assets/texts")
+            for filename in os.listdir(full_path):
+                if filename.endswith(self.ALLOWED_EXTENSIONS):
+                    file_path = os.path.join(full_path, filename)
+                    with open(file_path, 'r', encoding='utf-8') as file:
+                        content = file.read()
+                        self.files.append(content)
 
             return True
         except Exception as e:
@@ -38,8 +37,7 @@ class App:
 
     def __init__(self) -> None:
         if self.__load_ini_file(self.INI_FILE):
-            filePaths = self.config.get("assets", "files").split(",")
-            if self.__load_file(filePaths):
+            if self.__load_files():
                 self.__run()
 
     def __run(self):
@@ -48,7 +46,7 @@ class App:
                 f'{self.config["app"]["app_name"]} - {self.config["app"]["app_version"]}')
 
             for index, file in enumerate(self.files):
-                print(index + 1, file[0])
+                print(f"{index + 1}: {file[:1]}")
 
         except Exception as e:
             print(f"Something went wrong: {e}")
