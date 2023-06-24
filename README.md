@@ -21,6 +21,52 @@ In this project we use the following technologies:
 
 If you have the installed SDK in your system just make sure that you have the same versions required for the project and setup in your IDE of preference (we recommend [Visual Studio Code](https://code.visualstudio.com/)).
 
+### Docker
+
+If you have the installed Docker in your system you can follow the instructions below to interact with application:
+
+First, run the following command to build the image:
+
+```bash
+docker build -t app .
+```
+
+After build the image, run the following command to run the container with the application:
+
+```bash
+docker run -d app
+```
+
+Using the command above you can concatenate some common commands to interact with the application, since inside the container we have the exactly same environment that we have installed the SDK.
+
+```bash
+# e.g.
+docker run app python src/main.py
+```
+
+### Docker Compose
+
+If you have the installed Docker Compose in your system you can follow the instructions below to interact with application:
+
+First, run the following command to build the Docker Compose image:
+
+```bash
+docker-compose up -d --force-recreate
+```
+
+After build the image, run the following command to run the container with the application:
+
+```bash
+docker-compose exec app <command>
+```
+
+Using the command above you can concatenate some common commands to interact with the application, since inside the container we have the exactly same environment that we have installed the SDK.
+
+```bash
+# e.g.
+docker-compose exec app python src/main.py
+```
+
 ## Packages
 
 If you want to contribute with project we recommend install the dependencies inside [`requirements.txt`](requirements.txt). To use this packages you will need to update your `PATH` configuration. On Linux you should update your `.bashrc` including the following:
