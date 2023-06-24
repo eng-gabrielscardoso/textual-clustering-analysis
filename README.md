@@ -41,10 +41,10 @@ Using the command above you can concatenate some common commands to interact wit
 
 ```bash
 # e.g.
-docker run app python src/main.py
+docker run app python main.py
 ```
 
-### Docker Compose
+### Docker Compose (Recommended)
 
 If you have the installed Docker Compose in your system you can follow the instructions below to interact with application:
 

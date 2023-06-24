@@ -2,12 +2,14 @@ import configparser
 import os
 import sys
 
+from src.utils.sanitisation import Sanitisation
+
 
 class App:
     INI_FILE = "app.ini"
     ALLOWED_EXTENSIONS = (".txt")
 
-    def __load_ini_file(self, filename):
+    def __load_ini_file(self, filename) -> bool:
         full_path = os.path.abspath(os.path.join("./", filename))
         path_config_file = full_path if os.path.isfile(full_path) else \
             os.path.abspath(os.path.join(
@@ -19,7 +21,7 @@ class App:
             print(f"Couldn't load file in {path_config_file}")
             return False
 
-    def __load_files(self):
+    def __load_files(self) -> bool:
         try:
             self.files = []
             full_path = os.path.abspath("./src/assets/texts")
@@ -28,7 +30,8 @@ class App:
                     file_path = os.path.join(full_path, filename)
                     with open(file_path, 'r', encoding='utf-8') as file:
                         content = file.read()
-                        self.files.append(content)
+                        sanitised_content = Sanitisation.sanitise(content)
+                        self.files.append(sanitised_content)
 
             return True
         except Exception as e:
@@ -40,13 +43,12 @@ class App:
             if self.__load_files():
                 self.__run()
 
-    def __run(self):
+    def __run(self) -> None:
         try:
             print(
                 f'{self.config["app"]["app_name"]} - {self.config["app"]["app_version"]}')
 
-            for index, file in enumerate(self.files):
-                print(f"{index + 1}: {file[:1]}")
+            print(f"{self.files[0][0]}")
 
         except Exception as e:
             print(f"Something went wrong: {e}")

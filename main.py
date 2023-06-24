@@ -1,7 +1,7 @@
-from app.app import App
+from src.app.app import App
 
 
-def main():
+def main() -> None:
     try:
         App()
     except Exception as e:
