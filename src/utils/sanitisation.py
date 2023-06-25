@@ -4,7 +4,7 @@ class Sanitisation:
         pass
 
     @staticmethod
-    def sanitise(file: str) -> list[str]:
+    def sanitise(file: str) -> list:
         try:
             sanitised_file = []
             words = file.split()

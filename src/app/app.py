@@ -2,6 +2,7 @@ import configparser
 import os
 import sys
 
+from src.app.inverted_index import InvertedIndex
 from src.utils.sanitisation import Sanitisation
 
 
@@ -47,8 +48,5 @@ class App:
         try:
             print(
                 f'{self.config["app"]["app_name"]} - {self.config["app"]["app_version"]}')
-
-            print(f"{self.files[0][0]}")
-
         except Exception as e:
             print(f"Something went wrong: {e}")
