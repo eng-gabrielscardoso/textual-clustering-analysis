@@ -21,18 +21,24 @@ def inverted_index():
 
 
 def test_build(inverted_index):
-    result = inverted_index.find("greenberg")
-    assert result["count"] == 1
+    result1 = inverted_index.find("greenberg")
+    result2 = inverted_index.find("abstract")
+    assert result1["count"] == 1
+    assert result2["count"] == 36
 
 
 def test_find_existing_word(inverted_index):
-    result = inverted_index.find("greenberg")
-    assert result["count"] == 1
+    result1 = inverted_index.find("greenberg")
+    result2 = inverted_index.find("abstract")
+    assert result1["count"] == 1
+    assert result2["count"] == 36
 
 
 def test_find_non_existent_word(inverted_index):
-    result = inverted_index.find("apple")
-    assert result == {}
+    result1 = inverted_index.find("apple")
+    result2 = inverted_index.find("abstract")
+    assert result1 == {}
+    assert not result2 == {}
 
 
 def test_remove_existing_word(inverted_index):

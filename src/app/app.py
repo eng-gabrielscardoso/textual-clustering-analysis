@@ -48,5 +48,8 @@ class App:
         try:
             print(
                 f'{self.config["app"]["app_name"]} - {self.config["app"]["app_version"]}')
+
+            inverted_indexes = InvertedIndex(self.files)
+            print(inverted_indexes.find("abstract"))
         except Exception as e:
             print(f"Something went wrong: {e}")

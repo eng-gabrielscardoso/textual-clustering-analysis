@@ -1,22 +1,25 @@
 class InvertedIndex:
     INVERTED_INDEX = {}
 
-    def __init__(self, documents: list):
+    def __init__(self, documents: list) -> None:
         self.__build(documents)
 
-    def __build(self, documents: list):
+    def __build(self, documents: list) -> None:
         for index, document in enumerate(documents):
             self.add(index, document)
 
-    def add(self, index: int, document: list):
-        for word in document:
-            if word in self.INVERTED_INDEX:
-                if index in self.INVERTED_INDEX[word]:
+    def add(self, index: int, document: list) -> None:
+        added_words = set()
+        for position, word in enumerate(document):
+            if word not in added_words:
+                if word in self.INVERTED_INDEX:
                     self.INVERTED_INDEX[word]["count"] += 1
+                    self.INVERTED_INDEX[word]["positions"].append(
+                        [index, position])
                 else:
-                    self.INVERTED_INDEX[word]["count"] = 1
-            else:
-                self.INVERTED_INDEX[word] = {"count": 1}
+                    self.INVERTED_INDEX[word] = {
+                        "count": 1, "positions": [[index, position]]}
+                added_words.add(word)
 
     def get(self) -> dict:
         return self.INVERTED_INDEX
