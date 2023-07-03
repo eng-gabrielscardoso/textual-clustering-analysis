@@ -22,7 +22,6 @@ class TextualAnalysis:
 
         return common_words
 
-
     def compress_texts(self):
         compressed_texts = []
 
@@ -71,26 +70,19 @@ class TextualAnalysis:
         end_time = time.time()
         search_time['uncompressed'] = end_time - start_time
 
-        print("Before compress_texts()")
-        start_time = time.time()
-        self.compress_texts()
-        end_time = time.time()
-        print("After compress_texts()")
-        search_time['compressed'] = end_time - start_time
+        compressed_texts = self.compress_texts()
 
-        print("Before search_in_compressed()")
         start_time = time.time()
-        self.search_in_compressed(word)
+        self.search_in_compressed(word, compressed_texts)
         end_time = time.time()
-        print("After search_in_compressed()")
         search_time['compressed'] = end_time - start_time
 
         return search_time
 
-    def search_in_compressed(self, word):
+    def search_in_compressed(self, word, compressed_texts):
         documents = []
-
-        for index, compressed_text in enumerate(self.COMPRESSED_TEXTS):
+        
+        for index, compressed_text in enumerate(compressed_texts):
             decoded_text = self.decode_text(compressed_text)
             positions = [i for i, w in enumerate(decoded_text) if w == word]
 
@@ -102,17 +94,20 @@ class TextualAnalysis:
     def decode_text(self, compressed_text):
         decoded_text = ''
         current_code = ''
+        index = 0
+        huffman_codes_reversed = {code: word for word, code in self.HUFFMAN_CODES.items()}
 
-        for bit in compressed_text:
-            current_code += bit
+        while index < len(compressed_text):
+            current_code += compressed_text[index]
 
-            for word, code in self.HUFFMAN_CODES.items():
-                if code == current_code:
-                    decoded_text += word
-                    current_code = ''
-                    break
+            if current_code in huffman_codes_reversed:
+                decoded_text += huffman_codes_reversed[current_code]
+                current_code = ''
+
+            index += 1
 
         return decoded_text
+
 
     def plot_common_words(self, limit: int = 20):
         common_words = self.common_words()
