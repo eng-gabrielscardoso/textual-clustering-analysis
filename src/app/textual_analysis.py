@@ -79,7 +79,7 @@ class TextualAnalysis:
 
     def search_in_compressed(self, word, compressed_texts):
         documents = []
-        
+
         for index, compressed_text in enumerate(compressed_texts):
             decoded_text = self.decode_text(compressed_text)
             positions = [i for i, w in enumerate(decoded_text) if w == word]
@@ -93,7 +93,9 @@ class TextualAnalysis:
         decoded_text = ''
         current_code = ''
         index = 0
-        huffman_codes_reversed = {code: word for word, code in self.HUFFMAN_CODES.items()}
+        huffman_codes_reversed = {
+            code: word for word,
+            code in self.HUFFMAN_CODES.items()}
 
         while index < len(compressed_text):
             current_code += compressed_text[index]
@@ -105,7 +107,6 @@ class TextualAnalysis:
             index += 1
 
         return decoded_text
-
 
     def plot_common_words(self, limit: int = 20):
         common_words = self.common_words()
