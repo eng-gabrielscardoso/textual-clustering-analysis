@@ -2,7 +2,9 @@ import configparser
 import os
 import sys
 
+
 from src.app.inverted_index import InvertedIndex
+from src.app.textual_analysis import TextualAnalysis
 from src.utils.sanitisation import Sanitisation
 
 
@@ -49,7 +51,12 @@ class App:
             print(
                 f'{self.config["app"]["app_name"]} - {self.config["app"]["app_version"]}')
 
-            inverted_indexes = InvertedIndex(self.files)
-            print(inverted_indexes.find("abstract"))
+            inverted_index = InvertedIndex(self.files)
+
+            textual_analysis = TextualAnalysis(inverted_index, self.files)
+
+            textual_analysis.plot_common_words()
+            textual_analysis.plot_clusters()
+            textual_analysis.plot_search_time_comparison("abstract")
         except Exception as e:
             print(f"Something went wrong: {e}")

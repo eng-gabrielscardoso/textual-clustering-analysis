@@ -2,7 +2,11 @@
     "editor.tabSize": 4,
     "cSpell.words": [
         "autopep",
+        "matplotlib",
+        "pyplot",
         "pytest",
-        "UFPA"
+        "UFPA",
+        "xlabel",
+        "ylabel"
     ]
 }

@@ -44,3 +44,6 @@ class InvertedIndex:
         except Exception as e:
             print(e)
             return False
+
+    def __len__(self) -> int:
+        return len(self.INVERTED_INDEX)
