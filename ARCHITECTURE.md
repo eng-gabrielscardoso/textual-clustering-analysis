@@ -19,14 +19,14 @@ The inverted index structure is created using the [`InvertedIndex`](src/app/inve
 
 The sanitisation of the documents occurs in the [`Sanitisation`](src/utils/sanitisation.py) class. The most important thing to understand is that in this class there's a static method called `sanitise` which is responsible for return a list of words contained in the document. This is necessary because during the clustering/textual analysis process stuff like special characters or ASCII characters and more sanitisation before clustering.
 
-## Clustering the inverted indexes
-
-> Under development
-
 ## (Cluster) Textual Analysis
 
-> Under development
+Essentially, the clustering is done using the [`TextualAnalysis`](src/app/textual_analysis.py) class. The most important thing to understand is that in this class most of the operations are use the inverted indexes or raw files to cluster the data based on pattern matching.
 
 ## Chart plotting
 
+To plot the charts we use the library [MatplotLib](https://matplotlib.org/).
+
 ## Compressing the inverted indexes
+
+To compress the files we use the Huffman algorithm as approach.

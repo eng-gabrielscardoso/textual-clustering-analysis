@@ -12,6 +12,7 @@ In this project we use the following technologies:
 - [PIP](https://pypi.org/project/pip/)
 - [Autopep8](https://pypi.org/project/autopep8/)
 - [Coverage](https://pypi.org/project/coverage/)
+- [MatplotLib](https://matplotlib.org/)
 - [Pytest](https://pypi.org/project/pytest/)
 - Git and Github
 

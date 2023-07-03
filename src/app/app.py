@@ -55,6 +55,9 @@ class App:
 
             textual_analysis = TextualAnalysis(inverted_index, self.files)
 
+            print(f'Abstract: {textual_analysis.search("abstract")}')
+            print(f'Human: {textual_analysis.search("human")}')
+            print(f'Clinical: {textual_analysis.search("clinical")}')
             textual_analysis.plot_common_words()
             textual_analysis.plot_clusters()
             textual_analysis.plot_search_time_comparison("abstract")

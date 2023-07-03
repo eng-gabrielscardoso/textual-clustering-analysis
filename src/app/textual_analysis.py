@@ -18,8 +18,6 @@ class TextualAnalysis:
                 positions = [entry[0] for entry in data["positions"]]
                 common_words.append([word, count, positions])
 
-            common_words.sort(key=lambda x: x[0])
-
         return common_words
 
     def compress_texts(self):
